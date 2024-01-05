@@ -5,7 +5,7 @@ on:
     - cron: '0 0 * * 1'
 env: 
   REGISTRY: ghcr.io
-  IMAGE_NAME: codingkiddo.com/catalog-service
+  IMAGE_NAME: codingkiddo/catalog-service
   VERSION: latest
 jobs:
   build:
@@ -77,7 +77,7 @@ jobs:
             username: ${{ github.actor }}
             password: ${{ secrets.GITHUB_TOKEN }}
             name: Publish container image
-            run: docker push codingkiddo.com/catalog-service:latest
+            run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
             
             
             
