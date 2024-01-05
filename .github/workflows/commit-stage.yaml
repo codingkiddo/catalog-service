@@ -1,14 +1,12 @@
 name: Commit Stage
 on:
   push:
-  
-  env: 
-    REGISTRY: ghcr.io
-    IMAGE_NAME: codingkiddo.com/catalog-service
-    VERSION: latest
   schedule: # Every Monday
     - cron: '0 0 * * 1'
-
+env: 
+  REGISTRY: ghcr.io
+  IMAGE_NAME: codingkiddo.com/catalog-service
+  VERSION: latest
 jobs:
   build:
     name: Build and Test
