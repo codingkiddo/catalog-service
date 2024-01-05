@@ -35,34 +35,37 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons -->
-<dependency>
-    <groupId>org.springframework.data</groupId>
-    <artifactId>spring-data-commons</artifactId>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jdbc -->
-<dependency>
-    <groupId>org.springframework.data</groupId>
-    <artifactId>spring-data-jdbc</artifactId>
-</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-commons</artifactId>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.springframework.data/spring-data-jdbc -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jdbc</artifactId>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
-<dependency>
-    <groupId>org.postgresql</groupId>
-    <artifactId>postgresql</artifactId>
-    <scope>runtime</scope>
-</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 
-<!-- https://mvnrepository.com/artifact/org.springframework.retry/spring-retry -->
-<dependency>
-    <groupId>org.springframework.retry</groupId>
-    <artifactId>spring-retry</artifactId>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-core -->
-<dependency>
-    <groupId>org.flywaydb</groupId>
-    <artifactId>flyway-core</artifactId>
-</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.springframework.retry/spring-retry -->
+		<dependency>
+			<groupId>org.springframework.retry</groupId>
+			<artifactId>spring-retry</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-core -->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -102,10 +105,22 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<image>
+						<name>ghcr.io/codingkiddo/catalog-service</name>
+					</image>
+					<docker>
+						<publishRegistry>
+							<username>codingkiddo</username>
+                            <token>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</token>
+                            <url>https://ghcr.io</url>
+						</publishRegistry>
+					</docker>
+					<!-- 
 					<profiles>
-						<!-- <profile>prod</profile> -->
+						<profile>prod</profile>
 						<profile>testdata</profile>
 					</profiles>
+					 -->
 				</configuration>
 			</plugin>
 		</plugins>
