@@ -12,8 +12,8 @@ jobs:
     name: Build and Test
     runs-on: ubuntu-22.04
     permissions:
-      actions: read
-      contents: read
+      actions: write
+      contents: write
       security-events: write
     steps:
       - name: Checkout source code
@@ -46,7 +46,7 @@ jobs:
     needs: build
     runs-on: ubuntu-22.04
     permissions: 
-        contents: read
+        contents: write
         packages: write 
         security-events: write
     steps: 
