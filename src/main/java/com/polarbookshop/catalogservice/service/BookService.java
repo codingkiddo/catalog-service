@@ -20,9 +20,9 @@ public class BookService {
 		return bookRepository.findAll();
 	}
 
-	public Book viewBookDetails(String isbn) {
-		return bookRepository.findByisbn(isbn).orElseThrow(() -> new BookNotFoundException(isbn));
-	}
+//	public Book viewBookDetails(String isbn) {
+//		return bookRepository.findByisbn(isbn).orElseThrow(() -> new BookNotFoundException(isbn));
+//	}
 
 	public Book addBookToCatalog(Book book) {
 //		if (bookRepository.existsByIsbn(book.isbn())) {
@@ -35,19 +35,19 @@ public class BookService {
 		bookRepository.deleteByIsbn(isbn);
 	}
 	
-	public Book editBookDetails(String isbn, Book book) {
-		return bookRepository.findByisbn(isbn).map(existingBook -> {
-			var bookToUpdate = new Book(
-					existingBook.id(), 
-					existingBook.isbn(), 
-					book.title(), 
-					book.author(), 
-					book.price(), 
-					null, 
-					existingBook.createdDate(), 
-					existingBook.lastModifiedDate(), 
-					existingBook.version());
-			return bookRepository.save(bookToUpdate);
-		}).orElseGet(() -> addBookToCatalog(book));
-	}
+//	public Book editBookDetails(String isbn, Book book) {
+//		return bookRepository.findByisbn(isbn).map(existingBook -> {
+//			var bookToUpdate = new Book(
+//					existingBook.id(), 
+//					existingBook.isbn(), 
+//					book.title(), 
+//					book.author(), 
+//					book.price(), 
+//					null, 
+//					existingBook.createdDate(), 
+//					existingBook.lastModifiedDate(), 
+//					existingBook.version());
+//			return bookRepository.save(bookToUpdate);
+//		}).orElseGet(() -> addBookToCatalog(book));
+//	}
 }

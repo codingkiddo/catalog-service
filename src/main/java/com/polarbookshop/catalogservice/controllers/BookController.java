@@ -30,10 +30,10 @@ public class BookController {
 		return bookService.viewBookList();
 	}
 
-	@GetMapping("{isbn}")
-	public Book getByIsbn(@PathVariable String isbn) {
-		return bookService.viewBookDetails(isbn);
-	}
+//	@GetMapping("{isbn}")
+//	public Book getByIsbn(@PathVariable String isbn) {
+//		return bookService.viewBookDetails(isbn);
+//	}
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
@@ -47,8 +47,8 @@ public class BookController {
 		bookService.removeBookFromCatalog(isbn);
 	}
 
-	@PutMapping("{isbn}")
-	public Book put(@PathVariable String isbn, @Valid @RequestBody Book book) {
-		return bookService.editBookDetails(isbn, book);
-	}
+//	@PutMapping("{isbn}")
+//	public Book put(@PathVariable String isbn, @Valid @RequestBody Book book) {
+//		return bookService.editBookDetails(isbn, book);
+//	}
 }

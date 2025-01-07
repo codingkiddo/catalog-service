@@ -19,3 +19,12 @@ $ echo $?
 
 
 For full usage and installation instructions see [kubeval.com](https://kubeval.com/).
+
+
+
+
+mvn clean verify sonar:sonar -Dsonar.projectKey=catalog-service 
+                             -Dsonar.projectName='catalog-service' 
+                             -Dsonar.host.url=http://localhost:9000 
+                             -Dsonar.token=squ_acc5c0d63b1dc9b56e413eaedfbaf570bc614574
+

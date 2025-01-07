@@ -16,6 +16,12 @@ management:
 polar:
   greeting: Welcome to the local book catalog!
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/PolarBookshop
+          
   flyway:
     baseline-on-migrate: true
   datasource:
