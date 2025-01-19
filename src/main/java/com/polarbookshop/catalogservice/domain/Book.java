@@ -5,6 +5,10 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
 
+/*
+ * This is domain class
+ */
+
 public record Book (
 
     @NotBlank(message = "The book ISBN must be defined.")
