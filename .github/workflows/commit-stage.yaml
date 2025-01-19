@@ -1,7 +1,7 @@
 name: Commit Stage
 on:
   push:
-  schedule: # Every Sunday
+  schedule: # Every Sunday Evening
     - cron: '0 0 * * 1'
 env: 
   REGISTRY: ghcr.io
