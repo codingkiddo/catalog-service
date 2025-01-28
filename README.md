@@ -32,7 +32,18 @@ https://www.google.com/search?q=tekton&oq=tekton&gs_lcrp=EgZjaHJvbWUyDggAEEUYORh
 
 ## Useful Commands
 
+
+docker run -d \
+--name polar-postgres \
+-e POSTGRES_USER=user \
+-e POSTGRES_PASSWORD=password \
+-e POSTGRES_DB=polardb_catalog \
+-p 5432:5432 \
+postgres:14.4
+
+
 ./mvnw clean install
+./mvnw test -Dtest="CatalogServiceApplicationTests"
 java -jar build/libs/catalog-service-0.0.1-SNAPSHOT.jar
 
 
