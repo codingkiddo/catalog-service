@@ -47,6 +47,8 @@ postgres:14.4
 java -jar build/libs/catalog-service-0.0.1-SNAPSHOT.jar
 
 
+./mvnw spring-boot:build-image 
+docker push ghcr.io/codingkiddo/catalog-service:latest
 
 
 
