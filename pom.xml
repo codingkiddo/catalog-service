@@ -136,12 +136,13 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
+						<env><BP_JVM_VERSION>17</BP_JVM_VERSION></env>
 						<name>ghcr.io/codingkiddo/catalog-service</name>
 					</image>
 					<docker>
 						<publishRegistry>
 							<username>codingkiddo</username>
-                            <token>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</token>
+                            <token>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</token>
                             <url>https://ghcr.io</url>
 						</publishRegistry>
 					</docker>
