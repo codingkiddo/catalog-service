@@ -24,8 +24,16 @@
 		    <artifactId>spring-cloud-starter-bootstrap</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jdbc</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -54,6 +62,11 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+<dependency>
+    <groupId>org.testcontainers</groupId>
+    <artifactId>postgresql</artifactId>
+    <scope>test</scope>
+</dependency>
 
 		<!--
 		https://mvnrepository.com/artifact/org.springframework.retry/spring-retry -->
@@ -82,7 +95,11 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-		
+		<dependency>
+		    <groupId>org.testcontainers</groupId>
+		    <artifactId>testcontainers</artifactId>
+		    <scope>test</scope>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -93,6 +110,13 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<dependency>
+	            <groupId>org.testcontainers</groupId>
+	            <artifactId>testcontainers-bom</artifactId>
+	            <version>1.20.4</version>
+	            <type>pom</type>
+	            <scope>import</scope>
+        	</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -110,17 +134,34 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+                    <execution>
+                        <goals>
+                            <goal>build-image</goal>
+                        </goals>
+                    </execution>
+                </executions>
 				<configuration>
 					<image>
+						<env><BP_JVM_VERSION>17</BP_JVM_VERSION></env>
 						<name>ghcr.io/codingkiddo/catalog-service</name>
+						<!--<platforms>
+							<platform>linux/amd64</platform>
+							<platform>linux/arm64</platform>
+							<platform>linux/arm/v5</platform>
+						</platforms>-->
 					</image>
 					<docker>
+					
 						<publishRegistry>
 							<username>codingkiddo</username>
-                            <token>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</token>
+                            <token>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</token>
                             <url>https://ghcr.io</url>
 						</publishRegistry>
 					</docker>
+					<profiles>
+						<profile>testdata</profile>
+					</profiles>
 					<!-- 
 					<profiles>
 						<profile>prod</profile>
