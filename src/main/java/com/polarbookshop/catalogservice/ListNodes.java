@@ -16,12 +16,12 @@ public class ListNodes {
      */
     public static void main(String[] args) throws Exception {
         
-        ApiClient client  = Config.defaultClient();
-        CoreV1Api api = new CoreV1Api(client);
-        V1NodeList nodeList = api.listNode(null, null, null, null, null, null, null, null, 10, false);
-        nodeList.getItems()
-          .stream()
-          .forEach((node) -> System.out.println(node.getMetadata()));
+//        ApiClient client  = Config.defaultClient();
+//        CoreV1Api api = new CoreV1Api(client);
+//        V1NodeList nodeList = api.listNode(null, null, null, null, null, null, null, null, 10, false);
+//        nodeList.getItems()
+//          .stream()
+//          .forEach((node) -> System.out.println(node.getMetadata()));
     }
 
 }

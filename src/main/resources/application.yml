@@ -9,7 +9,7 @@ server:
     threads:
       max: 50
       min-spare: 5
-
+  shutdown: graceful
 spring:
    sql:
       init:
@@ -23,6 +23,8 @@ spring:
         maximum-pool-size: 5
    application: 
       name: catalog-service
+   lifecycle:
+    timeout-per-shutdown-phase: 15s
    config: 
       import: "optional:configserver"
    cloud: 
