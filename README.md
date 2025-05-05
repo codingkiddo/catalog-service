@@ -35,7 +35,7 @@ https://www.google.com/search?q=tekton&oq=tekton&gs_lcrp=EgZjaHJvbWUyDggAEEUYORh
 ./mvnw clean install
 java -jar build/libs/catalog-service-0.0.1-SNAPSHOT.jar
 
-
+./mvnw test -Dtest=com.polarbookshop.catalogservice.domain.BookValidationTests
 
 
 
