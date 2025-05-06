@@ -68,31 +68,8 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-                    <execution>
-                        <goals>
-                            <goal>build-image</goal>
-                        </goals>
-                    </execution>
-                </executions>
+				
 				<configuration>
-					<image>
-						<env><BP_JVM_VERSION>17</BP_JVM_VERSION></env>
-						<name>ghcr.io/codingkiddo/catalog-service</name>
-						<!--<platforms>
-							<platform>linux/amd64</platform>
-							<platform>linux/arm64</platform>
-							<platform>linux/arm/v5</platform>
-						</platforms>-->
-					</image>
-					<docker>
-					
-						<publishRegistry>
-							<username>codingkiddo</username>
-                            <token>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</token>
-                            <url>https://ghcr.io</url>
-						</publishRegistry>
-					</docker>
 					<profiles>
 						<profile>testdata</profile>
 					</profiles>
