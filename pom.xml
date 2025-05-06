@@ -18,6 +18,7 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -31,8 +32,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -49,9 +48,9 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
+		
 	</dependencies>
 	<dependencyManagement>
-		
 	</dependencyManagement>
 
 	<build>
@@ -68,8 +67,17 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				
 				<configuration>
+					<image>
+						<name>ghcr.io/codingkiddo/catalog-service</name>
+					</image>
+					<docker>
+						<publishRegistry>
+							<username>codingkiddo</username>
+                            <token>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</token>
+                            <url>https://ghcr.io</url>
+						</publishRegistry>
+					</docker>
 					<profiles>
 						<profile>testdata</profile>
 					</profiles>
