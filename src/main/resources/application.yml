@@ -1,2 +1,4 @@
 polar:
    greeting: Welcome KIDDO to the local book catalog!
+server:
+   port: 9001

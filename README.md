@@ -1,5 +1,19 @@
 # Catalog Service
 
+
+
+Useful Commands
+./mvnw clean install java -jar build/libs/catalog-service-0.0.1-SNAPSHOT.jar
+
+./mvnw test -Dtest=com.polarbookshop.catalogservice.domain.BookValidationTests
+
+http POST :9001/books author="Lyra Silverstar" title="Northern Lights" isbn="1234567891" price=9.90
+http GET :9001/books
+http POST :9001/books author="Jon Snow" title="" isbn="123ABC456Z" price=9.90
+
+
+
+
 This application is part of the Polar Bookshop system and provides the functionality for managing
 the books in the bookshop catalog. It's part of the project built in the
 [Cloud Native Spring in Action](https://www.manning.com/books/cloud-native-spring-in-action) book
