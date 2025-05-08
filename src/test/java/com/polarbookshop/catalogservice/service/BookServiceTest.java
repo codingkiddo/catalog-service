@@ -1,0 +1,54 @@
+package com.polarbookshop.catalogservice.service;
+
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.Mockito.when;
+
+import java.util.Optional;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.polarbookshop.catalogservice.domain.Book;
+import com.polarbookshop.catalogservice.domain.BookAlreadyExistsException;
+import com.polarbookshop.catalogservice.domain.BookNotFoundException;
+import com.polarbookshop.catalogservice.persistence.BookRepository;
+
+@ExtendWith(MockitoExtension.class)
+class BookServiceTest {
+
+    @Mock
+    private BookRepository bookRepository;
+
+    @InjectMocks
+    private BookServiceImpl bookService;
+
+//    @BeforeEach
+//    void init() {
+//    	bookService = new BookServiceImpl(bookRepository);
+//    }
+    
+    @Test
+    void whenBookToCreateAlreadyExistsThenThrows() {
+        var bookIsbn = "1234561232";
+        var bookToCreate = new Book(bookIsbn, "Title", "Author", 9.90);
+        when(bookRepository.existsByIsbn(bookIsbn)).thenReturn(true);
+        assertThatThrownBy(() -> bookService.addBookToCatalog(bookToCreate))
+                .isInstanceOf(BookAlreadyExistsException.class)
+                .hasMessage("A book with ISBN " + bookIsbn + " already exists.");
+    }
+
+    @Test
+    void whenBookToReadDoesNotExistThenThrows() {
+        var bookIsbn = "1234561232";
+        when(bookRepository.findByIsbn(bookIsbn)).thenReturn(Optional.empty());
+        assertThatThrownBy(() -> bookService.viewBookDetails(bookIsbn))
+                .isInstanceOf(BookNotFoundException.class)
+                .hasMessage("The book with ISBN " + bookIsbn + " was not found.");
+    }
+
+}
