@@ -5,8 +5,6 @@ import static org.mockito.Mockito.when;
 
 import java.util.Optional;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -26,11 +24,6 @@ class BookServiceTest {
 
     @InjectMocks
     private BookServiceImpl bookService;
-
-//    @BeforeEach
-//    void init() {
-//    	bookService = new BookServiceImpl(bookRepository);
-//    }
     
     @Test
     void whenBookToCreateAlreadyExistsThenThrows() {
