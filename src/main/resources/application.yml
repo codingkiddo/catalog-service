@@ -33,9 +33,9 @@ spring:
     hikari:
       connection-timeout: 2000
       maximum-pool-size: 10
-  sql:
-    init:
-      mode: always
+# - For flyway  sql:
+#    init:
+#      mode: always
 management: 
   endpoints:
     web:
