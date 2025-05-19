@@ -19,7 +19,7 @@ spec:
       containers:
         - name: catalog-service
           image: ghcr.io/codingkiddo/catalog-service:0.0.7-SNAPSHOT
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           lifecycle:
             preStop:
               exec:
