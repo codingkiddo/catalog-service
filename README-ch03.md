@@ -22,6 +22,9 @@ http POST :9001/books author="Lyra Silverstar" title="Northern Lights" isbn="123
 
 http GET :9001/books
 
+http GET kubemaster:9001/books
+
+
 http POST :9001/books author="Jon Snow" title="" isbn="123ABC456Z" price=9.90
 
 
