@@ -35,7 +35,10 @@ spec:
               value: user
             - name: SPRING_DATASOURCE_PASSWORD
               value: password
-            - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://polar-postgres:5432/polardb_catalog
+            - name: POSTGRES_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: hostname-config
+                  key: postgres_host
             - name: SPRING_PROFILES_ACTIVE
               value: testdata
