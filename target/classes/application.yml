@@ -8,6 +8,7 @@ server:
     threads:
       max: 50
       min-spare: 5
+   shutdown: graceful 
 spring:
   application:
     name: catalog-service
@@ -29,10 +30,13 @@ spring:
   datasource:
     username: user
     password: password
-    url: jdbc:postgresql://localhost:5432/polardb_catalog
+#    url: jdbc:postgresql://localhost:5432/polardb_catalog
+    url: jdbc:postgresql://${POSTGRES_HOST}:5432/polardb_catalog
     hikari:
       connection-timeout: 2000
       maximum-pool-size: 10
+  lifecycle:
+    timeout-per-shutdown-phase: 15s 
 # - For flyway  sql:
 #    init:
 #      mode: always
