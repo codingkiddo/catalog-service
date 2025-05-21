@@ -1,7 +1,7 @@
 # Build
 custom_build (
 	# Name of the container image
-	ref = 'catalog-service', 
+	ref = 'ghcr.io/codingkiddo/catalog-service:0.0.7-SNAPSHOT', 
 	skips_local_docker = True, 
 	# Command to build the container image
 	command = './mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=ghcr.io/codingkiddo/catalog-service:0.0.7-SNAPSHOT',
