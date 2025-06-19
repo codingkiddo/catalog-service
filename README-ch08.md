@@ -1,4 +1,4 @@
-docker push ghcr.io/codingkiddo/catalog-service:0.0.7-SNAPSHOT
+docker push ghcr.io/codingkiddo/catalog-service:0.0.8-SNAPSHOT
 
 
 java -Dspring.profiles.active=testdata -jar target/catalog-service-0.0.8-SNAPSHOT.jar 
@@ -6,7 +6,7 @@ java -Dspring.profiles.active=testdata -jar target/catalog-service-0.0.8-SNAPSHO
 
 docker rm -fv polar-postgres
 
-docker build --build-arg JAR_FILE=target/catalog-service-0.0.7-SNAPSHOT.jar -t catalog-service .
+docker build --build-arg JAR_FILE=target/catalog-service-0.0.8-SNAPSHOT.jar -t catalog-service .
 
 
 docker run -d \
