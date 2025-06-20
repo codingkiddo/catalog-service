@@ -9,6 +9,10 @@ docker rm -fv polar-postgres
 docker build --build-arg JAR_FILE=target/catalog-service-0.0.8-SNAPSHOT.jar -t catalog-service .
 
 
+kubectl logs deployment/catalog-service
+
+
+
 docker run -d \
 --name polar-postgres \
 --net catalog-network \
