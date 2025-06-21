@@ -33,8 +33,6 @@ spec:
               value: http://config-service:8888
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://polar-postgres:5432/polardb_catalog
-            - name: SPRING_PROFILES_ACTIVE
-              value: testdata
 
 ---
 
