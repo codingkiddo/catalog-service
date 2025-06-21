@@ -33,5 +33,20 @@ spec:
               value: http://config-service:8888
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://polar-postgres:5432/polardb_catalog
-            - name: SPRING_PROFILES_ACTIVE
-              value: testdata
+
+---
+
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: catalog-service
+    labels:
+      app: catalog-service
+  spec:
+    type: NodePort
+    selector:
+      app: catalog-service
+    ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9001
