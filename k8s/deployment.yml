@@ -18,7 +18,7 @@ spec:
         - name: dockerconfigjson-github-com
       containers:
         - name: catalog-service
-          image: ghcr.io/codingkiddo/catalog-service:0.0.8-SNAPSHOT
+          image: ghcr.io/codingkiddo/catalog-service:0.0.7-SNAPSHOT
           imagePullPolicy: Always
           lifecycle:
             preStop:
@@ -30,8 +30,8 @@ spec:
             - name: BPL_JVM_THREAD_COUNT
               value: "50"
             - name: SPRING_CLOUD_CONFIG_URI
-              value: http://config-service
+              value: http://config-service:8888
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://polar-postgres/polardb_catalog
+              value: jdbc:postgresql://polar-postgres:5432/polardb_catalog
             - name: SPRING_PROFILES_ACTIVE
               value: testdata

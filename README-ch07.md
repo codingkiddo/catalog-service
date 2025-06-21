@@ -102,3 +102,10 @@ data:
   sudo ufw allow from 192.168.64.1 to any port 9001
   
   sudo ufw allow from 192.168.64.1
+  
+  
+  
+  
+kubectl apply -f k8s/deployment.yml
+kubectl logs deployment/catalog-service
+kubectl delete -f k8s/deployment.yml
