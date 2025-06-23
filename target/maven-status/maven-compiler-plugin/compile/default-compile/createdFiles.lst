@@ -1,0 +1,13 @@
+com/polarbookshop/catalogservice/domain/Book.class
+com/polarbookshop/catalogservice/web/HomeController.class
+com/polarbookshop/catalogservice/web/BookControllerAdvice.class
+com/polarbookshop/catalogservice/service/BookServiceImpl.class
+com/polarbookshop/catalogservice/config/DataConfig.class
+com/polarbookshop/catalogservice/web/BookController.class
+com/polarbookshop/catalogservice/domain/BookAlreadyExistsException.class
+com/polarbookshop/catalogservice/CatalogServiceApplication.class
+com/polarbookshop/catalogservice/service/BookService.class
+com/polarbookshop/catalogservice/demo/BookDataLoader.class
+com/polarbookshop/catalogservice/domain/BookNotFoundException.class
+com/polarbookshop/catalogservice/config/PolarProperties.class
+com/polarbookshop/catalogservice/persistence/BookRepository.class
