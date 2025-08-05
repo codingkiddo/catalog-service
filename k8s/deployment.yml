@@ -18,7 +18,7 @@ spec:
         - name: dockerconfigjson-github-com
       containers:
         - name: catalog-service
-          image: ghcr.io/codingkiddo/catalog-service:0.0.7-SNAPSHOT
+          image: ghcr.io/codingkiddo/catalog-service:0.0.8-SNAPSHOT
           imagePullPolicy: Always
           lifecycle:
             preStop:

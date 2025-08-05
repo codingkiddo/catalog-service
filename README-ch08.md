@@ -3,6 +3,7 @@ docker push ghcr.io/codingkiddo/catalog-service:0.0.8-SNAPSHOT
 
 java -Dspring.profiles.active=testdata -jar target/catalog-service-0.0.8-SNAPSHOT.jar 
 
+http POST :9002/orders isbn=1234567890 quantity=3
 
 docker rm -fv polar-postgres
 
